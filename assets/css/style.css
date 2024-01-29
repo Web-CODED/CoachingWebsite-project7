@@ -386,6 +386,16 @@ body {
 
 .navbar-list { padding: 15px 20px; }
 
+.navbar-item .btn{
+  background-color: red;
+  animation: blinker 1s linear infinite;
+}
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
 .navbar-item:not(:last-child) { border-block-end: 1px solid var(--platinum); }
 
 .navbar-link {
@@ -451,6 +461,20 @@ body {
   border-top-left-radius: 50px;
   border-bottom-right-radius: 90px;
 }
+.hero-banner .blink{
+  padding-bottom: 30px;
+  margin-bottom: 70px;
+  font-size: 30px;
+  color: brown;
+  font-family: 'Courier New', Courier, monospace;
+  position: relative;
+  animation: blinker 1s linear infinite;
+  }
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
 
 
 
