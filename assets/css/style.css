@@ -304,7 +304,6 @@ body {
   #HEADER
 \*-----------------------------------*/
 
-.header .btn { display: none; }
 
 .header {
   position: absolute;
@@ -312,12 +311,12 @@ body {
   left: 0;
   width: 100%;
   background-color: var(--white);
-  padding-block: 12px;
+  padding-block: 7px;
   box-shadow: var(--shadow-1);
   z-index: 4;
 }
 
-.header.active { position: fixed; }
+.header.active { position: relative; }
 
 .header .container,
 .header-actions,
@@ -766,16 +765,24 @@ body {
 /*-----------------------------------*\
   #BLOG
 \*-----------------------------------*/
+.blog-card{
+  position: relative;
+  background-color: var(--white);
+  border-radius: var(--radius-5);
+  overflow: hidden;
+}
 
-.blog-card .card-banner { border-radius: var(--radius-10); }
-
-.blog-card .card-banner .img-cover { transition: var(--transition-2); }
+.blog-card .card-banner .img-cover {
+  position: relative;
+  object-fit: contain;
+  transition: var(--transition-2); 
+}
 
 .blog-card .card-banner::after {
   inset: 0;
   background-color: var(--black_50);
   opacity: 0;
-  transition: var(--transition-1);
+  transition: var(--transition-2);
 }
 
 .blog-card:is(:hover, :focus-within) .card-banner .img-cover { transform: scale(1.1); }
