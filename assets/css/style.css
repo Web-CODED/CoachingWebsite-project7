@@ -441,8 +441,14 @@ body {
   font-size: var(--fs-4);
   text-align: center;
   margin-block: 18px 20px;
+  box-shadow: 30px 18px 20px 25px #0000008c;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 .hero .btn { margin-inline: auto; }
 
 .hero-banner {
@@ -475,7 +481,36 @@ body {
       opacity: 0;
     }
   }
-
+.animated-text li{
+  position: relative;
+  color: blueviolet;
+  width: max-content;
+  top: 0;
+}
+.animated-text li::before,
+.animated-text li::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 25px;
+}
+.animated-text li::before{
+  background-color: var(--isabelline);
+  animation: typewriter 4s steps(20) infinite;
+}
+.animated-text li::after{
+  height: 85%;
+  width: 0.100em;
+  background: blueviolet;
+  animation: typewriter 4s steps(20) infinite;
+}
+@keyframes typewriter{
+  to{
+    left: 105%
+  }
+}
 
 
 
@@ -797,7 +832,7 @@ body {
 }
 
 .blog-card .card-banner .img-cover {
-  position: relative;
+  position: absolute;
   object-fit: contain;
   transition: var(--transition-2); 
 }
